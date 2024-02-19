@@ -19,6 +19,10 @@ async function criaVideo(titulo, descricao, url, imagem) {
         })
     });
 
+    if(!conexao.ok){
+        throw new Error("Nao foi possivel criar um novo video")
+    }
+    
     const conexaoConvertida = conexao.json();
 
     return conexaoConvertida;
